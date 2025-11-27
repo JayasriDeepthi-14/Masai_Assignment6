@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To-Do List</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width:700px; margin:30px auto; padding:0 16px; }
+    h1 { margin-bottom: 8px; }
+    .controls { display:flex; gap:8px; margin-bottom:12px; }
+    #taskInput { flex:1; padding:8px; font-size:16px; }
+    button { padding:8px 10px; font-size:14px; cursor:pointer; }
+    ul { padding-left:20px; margin-top:8px; }
+    li { display:flex; gap:10px; align-items:center; margin:8px 0; }
+    .task-text { flex:1; }
+    .completed { text-decoration:line-through; color: #777; }
+    .small { padding:6px 8px; font-size:13px; }
+  </style>
+</head>
+<body>
+  <h1>To-Do List</h1>
+
+  <div class="controls">
+    <input id="taskInput" type="text" placeholder="Type a new task and press Enter or click Add Task" aria-label="Task input" />
+    <button id="addTaskBtn">Add Task</button>
+  </div>
+
+  <ul id="taskList" aria-live="polite"></ul>
+
+  <!-- Link to external JS -->
+  <script src="task5.js"></script>
+</body>
+</html>

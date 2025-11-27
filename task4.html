@@ -1,0 +1,46 @@
+<!-- L1 - Debugging DOM Issues -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Debugging Task - Fixed</title>
+</head>
+<body>
+  <p id="message">Original Message</p>
+  <button id="textButton">Change Text</button>
+  <br><br>
+  <div id="box" style="width: 100px; height: 100px; background-color: lightgray;"></div>
+  <button id="colorButton">Change Background</button>
+  <script>
+    // BUG FIX 1:
+    // Original: document.querySelector('#massage')  // incorrect id 'massage'
+    // Fix: use the correct id 'message'
+    const para = document.querySelector('#message'); // Fixed incorrect id
+
+    // BUG FIX 2:
+    // Original: document.getElementByName('textButton') // no such method
+    // Fix: use getElementById to select the button by its id
+    const textButton = document.getElementById('textButton'); // Fixed incorrect method
+
+    // BUG FIX 3:
+    // Original: textButton.addClickEventListener(...) // invalid method name
+    // Fix: use addEventListener('click', ...)
+    textButton.addEventListener('click', () => { // Fixed method name
+      // BUG FIX 4:
+      // Original: para.contentText = 'New Message' // wrong property name
+      // Fix: use textContent to change the paragraph text
+      para.textContent = 'New Message'; // Fixed property name
+    });
+
+    // The box selection was correct in original, keep it:
+    const box = document.getElementById('box');
+    const colorButton = document.getElementById('colorButton');
+
+    colorButton.addEventListener('click', () => {
+      // BUG FIX 5:
+      // Original: box.styl.backgroundColor = 'blue'; // typo 'styl'
+      // Fix: use 'style' property
+      box.style.backgroundColor = 'blue'; // Fixed typo in 'style'
+    });
+  </script>
+</body>
+</html>
